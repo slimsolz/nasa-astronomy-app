@@ -1,10 +1,12 @@
+import moment from "moment";
+
 export type DetailsState = {
   url?: string;
   hdurl?: string;
   copyright?: string;
   title?: string;
   explanation?: string;
-  date?: Date;
+  date?: string;
   media_type?: string;
   service_version?: string
 }
@@ -17,7 +19,7 @@ export type PictureDetailsProps = DetailsState & {
 };
 
 export const persistToLocalStorage = (details: DetailsState, date?: Date): void => {
-  if (getPhotoDetailsFromLocalStorage(date) === undefined) {
+  if (!getPhotoDetailsFromLocalStorage(date)) {
     const photos = JSON.parse(localStorage.getItem('photo_details')!);
     photos.push(details)
     localStorage.setItem("photo_details", JSON.stringify(photos));
@@ -27,12 +29,14 @@ export const persistToLocalStorage = (details: DetailsState, date?: Date): void 
 }
 
 export const getPhotoDetailsFromLocalStorage = (date?: Date): DetailsState => {
+  const dateFormatted = moment(date).format("YYYY-MM-D");
   if (localStorage.getItem('photo_details')) {
     const details = JSON.parse(localStorage.getItem('photo_details')!)
-      .find((detail: DetailsState) =>
-        detail.date === date
-    )
+      .find((detail: DetailsState) => {
+        return detail.date === dateFormatted
+      })
     return details;
+  } else {
+    return {};
   }
-  return {};
 }
