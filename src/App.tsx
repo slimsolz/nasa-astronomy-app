@@ -18,9 +18,10 @@ function App() {
       try {
         const response = await (await fetch(endpoint)).json();
         if (!response.code) {
-          const formattedResponse = { ...response, fav };
+          const formattedResponse = { ...response, fav: false };
           persistToLocalStorage(formattedResponse, dateValue);
           setDetails(formattedResponse);
+          setFav(false);
         } else {
           setError(response.msg);
         }
@@ -34,6 +35,7 @@ function App() {
       const details = getPhotoDetailsFromLocalStorage(dateValue);
       if (details) {
         setDetails(details);
+        setFav(details.fav ? details.fav : false)
         setLoading(false);
         setError("");
       } else {
