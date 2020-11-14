@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 import PictureDisplay from './components/PictureDisplay/PictureDisplay';
 import moment from "moment";
-import { DetailsState, getPhotoDetailsFromLocalStorage, onFavorite, persistToLocalStorage } from './utils';
+import { DetailsState, getErrorMessage, getPhotoDetailsFromLocalStorage, onFavorite, persistToLocalStorage } from './utils';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,11 +17,17 @@ function App() {
       const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=${date}`;
       try {
         const response = await (await fetch(endpoint)).json();
-        const formattedResponse = { ...response, fav };
-        persistToLocalStorage(formattedResponse, dateValue);
-        setDetails(formattedResponse);
+        if (!response.code) {
+          const formattedResponse = { ...response, fav: false };
+          persistToLocalStorage(formattedResponse, dateValue);
+          setDetails(formattedResponse);
+          setFav(false);
+        } else {
+          setError(response.msg);
+        }
       } catch (error) {
-        console.log('error', error)
+        const errorMessage = getErrorMessage(error);
+        setError(errorMessage);
       }
     }
 
@@ -29,7 +35,9 @@ function App() {
       const details = getPhotoDetailsFromLocalStorage(dateValue);
       if (details) {
         setDetails(details);
+        setFav(details.fav ? details.fav : false)
         setLoading(false);
+        setError("");
       } else {
         getDetails();
         setLoading(false);
@@ -71,6 +79,7 @@ function App() {
           dateValue={dateValue}
           onFavClicked={onFavClicked}
           fav={fav}
+          error={error}
         />
       }
     </div>

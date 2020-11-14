@@ -41,12 +41,15 @@
 }
 
 .PictureDetails__favBtn {
+  outline: none;
   text-transform: capitalize;
   padding: 5px;
 }
 
 .PictureDetails__fav {
   background-color: red;
+  border: 0;
+  outline: none;
   color: white;
 }
 
