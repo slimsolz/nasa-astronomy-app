@@ -9,9 +9,6 @@
 - Run yarn start to start the server
 - Run yarn test to run the test
 
-## Using the Live Ap
-
-- The live application is hosted at
 
 ## Contributing Guide
 

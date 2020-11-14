@@ -1,0 +1,556 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render without throwing an error 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="PictureDetails"
+        data-testid="main"
+      >
+        <h2
+          class="PictureDetails__title"
+          data-testid="title"
+        />
+        <div
+          class="PictureDetails__imageContainer"
+        >
+          <button
+            class="PictureDetails__ArrowBtn PictureDetails__ArrowLeftBtn"
+            data-testid="prevBtn"
+          >
+            <svg
+              color="#b81c1c"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(184, 28, 28);"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+              />
+            </svg>
+          </button>
+          <img
+            class="PictureDetails__img"
+            src="https://apod.nasa.gov/apod/image/2011/lunaortyblue1200nodidasc.jpg"
+          />
+          <button
+            class="PictureDetails__ArrowBtn PictureDetails__ArrowRightBtn"
+            data-testid="nextBtn"
+          >
+            <svg
+              color="#b81c1c"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(184, 28, 28);"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="PictureDetails__mobileArrowContainer"
+        >
+          <button>
+            <svg
+              color="#b81c1c"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(184, 28, 28);"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+              />
+            </svg>
+          </button>
+          <button>
+            <svg
+              color="#b81c1c"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              style="color: rgb(184, 28, 28);"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="PictureDetails__dateContainer"
+          data-testid="dateContainer"
+        >
+          <button
+            class="PictureDetails__favBtn false"
+          >
+            set favorite
+          </button>
+          <div
+            class="react-date-picker react-date-picker--closed react-date-picker--enabled"
+          >
+            <div
+              class="react-date-picker__wrapper"
+            >
+              <div
+                class="react-date-picker__inputGroup"
+              >
+                <input
+                  max="275760-09-13"
+                  min="0001-01-01"
+                  name="date"
+                  style="visibility: hidden; position: absolute; top: -9999px; left: -9999px;"
+                  type="date"
+                  value="2020-11-14"
+                />
+                
+                <input
+                  autocomplete="off"
+                  class="react-date-picker__inputGroup__input react-date-picker__inputGroup__month"
+                  data-input="true"
+                  max="12"
+                  min="1"
+                  name="month"
+                  placeholder="--"
+                  style="width: 10px;"
+                  type="number"
+                  value="11"
+                />
+                <span
+                  class="react-date-picker__inputGroup__divider"
+                >
+                  /
+                </span>
+                <input
+                  autocomplete="off"
+                  class="react-date-picker__inputGroup__input react-date-picker__inputGroup__day"
+                  data-input="true"
+                  max="30"
+                  min="1"
+                  name="day"
+                  placeholder="--"
+                  style="width: 12px;"
+                  type="number"
+                  value="14"
+                />
+                <span
+                  class="react-date-picker__inputGroup__divider"
+                >
+                  /
+                </span>
+                <input
+                  autocomplete="off"
+                  class="react-date-picker__inputGroup__input react-date-picker__inputGroup__year"
+                  data-input="true"
+                  max="275760"
+                  min="1"
+                  name="year"
+                  placeholder="----"
+                  step="1"
+                  style="width: 24px;"
+                  type="number"
+                  value="2020"
+                />
+                
+              </div>
+              <button
+                class="react-date-picker__clear-button react-date-picker__button"
+                type="button"
+              >
+                <svg
+                  class="react-date-picker__clear-button__icon react-date-picker__button__icon"
+                  height="19"
+                  stroke="black"
+                  stroke-width="2"
+                  viewBox="0 0 19 19"
+                  width="19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="4"
+                    x2="15"
+                    y1="4"
+                    y2="15"
+                  />
+                  <line
+                    x1="15"
+                    x2="4"
+                    y1="4"
+                    y2="15"
+                  />
+                </svg>
+              </button>
+              <button
+                class="react-date-picker__calendar-button react-date-picker__button"
+                type="button"
+              >
+                <svg
+                  class="react-date-picker__calendar-button__icon react-date-picker__button__icon"
+                  height="19"
+                  stroke="black"
+                  stroke-width="2"
+                  viewBox="0 0 19 19"
+                  width="19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="none"
+                    height="15"
+                    width="15"
+                    x="2"
+                    y="2"
+                  />
+                  <line
+                    x1="6"
+                    x2="6"
+                    y1="0"
+                    y2="4"
+                  />
+                  <line
+                    x1="13"
+                    x2="13"
+                    y1="0"
+                    y2="4"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <h3
+          class="PictureDetails__descriptionTitle"
+        >
+          Description
+        </h3>
+        <p
+          class="PictureDetails__description"
+          data-testid="description"
+        >
+          Yesterday, early morning risers around planet Earth were treated to a waning Moon low in the east as the sky grew bright before dawn. From the Island of Ortigia, Syracuse, Sicily, Italy this simple snapshot found the slender sunlit crescent just before sunrise. Never wandering far from the Sun in Earth's sky, inner planets Venus and Mercury shared the calm seaside view. Also in the frame, right of the line-up of Luna and planets, is bright star Spica, alpha star of the constellation Virgo and one of the 20 brightest stars in Earth's night. Tomorrow the Moon will be New. The dark lunar disk means mostly dark nights for planet Earth in the coming week and a good chance to watch the annual Leonid Meteor Shower.
+        </p>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="PictureDetails"
+      data-testid="main"
+    >
+      <h2
+        class="PictureDetails__title"
+        data-testid="title"
+      />
+      <div
+        class="PictureDetails__imageContainer"
+      >
+        <button
+          class="PictureDetails__ArrowBtn PictureDetails__ArrowLeftBtn"
+          data-testid="prevBtn"
+        >
+          <svg
+            color="#b81c1c"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(184, 28, 28);"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+            />
+          </svg>
+        </button>
+        <img
+          class="PictureDetails__img"
+          src="https://apod.nasa.gov/apod/image/2011/lunaortyblue1200nodidasc.jpg"
+        />
+        <button
+          class="PictureDetails__ArrowBtn PictureDetails__ArrowRightBtn"
+          data-testid="nextBtn"
+        >
+          <svg
+            color="#b81c1c"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(184, 28, 28);"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="PictureDetails__mobileArrowContainer"
+      >
+        <button>
+          <svg
+            color="#b81c1c"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(184, 28, 28);"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"
+            />
+          </svg>
+        </button>
+        <button>
+          <svg
+            color="#b81c1c"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            style="color: rgb(184, 28, 28);"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="PictureDetails__dateContainer"
+        data-testid="dateContainer"
+      >
+        <button
+          class="PictureDetails__favBtn false"
+        >
+          set favorite
+        </button>
+        <div
+          class="react-date-picker react-date-picker--closed react-date-picker--enabled"
+        >
+          <div
+            class="react-date-picker__wrapper"
+          >
+            <div
+              class="react-date-picker__inputGroup"
+            >
+              <input
+                max="275760-09-13"
+                min="0001-01-01"
+                name="date"
+                style="visibility: hidden; position: absolute; top: -9999px; left: -9999px;"
+                type="date"
+                value="2020-11-14"
+              />
+              
+              <input
+                autocomplete="off"
+                class="react-date-picker__inputGroup__input react-date-picker__inputGroup__month"
+                data-input="true"
+                max="12"
+                min="1"
+                name="month"
+                placeholder="--"
+                style="width: 10px;"
+                type="number"
+                value="11"
+              />
+              <span
+                class="react-date-picker__inputGroup__divider"
+              >
+                /
+              </span>
+              <input
+                autocomplete="off"
+                class="react-date-picker__inputGroup__input react-date-picker__inputGroup__day"
+                data-input="true"
+                max="30"
+                min="1"
+                name="day"
+                placeholder="--"
+                style="width: 12px;"
+                type="number"
+                value="14"
+              />
+              <span
+                class="react-date-picker__inputGroup__divider"
+              >
+                /
+              </span>
+              <input
+                autocomplete="off"
+                class="react-date-picker__inputGroup__input react-date-picker__inputGroup__year"
+                data-input="true"
+                max="275760"
+                min="1"
+                name="year"
+                placeholder="----"
+                step="1"
+                style="width: 24px;"
+                type="number"
+                value="2020"
+              />
+              
+            </div>
+            <button
+              class="react-date-picker__clear-button react-date-picker__button"
+              type="button"
+            >
+              <svg
+                class="react-date-picker__clear-button__icon react-date-picker__button__icon"
+                height="19"
+                stroke="black"
+                stroke-width="2"
+                viewBox="0 0 19 19"
+                width="19"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="4"
+                  x2="15"
+                  y1="4"
+                  y2="15"
+                />
+                <line
+                  x1="15"
+                  x2="4"
+                  y1="4"
+                  y2="15"
+                />
+              </svg>
+            </button>
+            <button
+              class="react-date-picker__calendar-button react-date-picker__button"
+              type="button"
+            >
+              <svg
+                class="react-date-picker__calendar-button__icon react-date-picker__button__icon"
+                height="19"
+                stroke="black"
+                stroke-width="2"
+                viewBox="0 0 19 19"
+                width="19"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="none"
+                  height="15"
+                  width="15"
+                  x="2"
+                  y="2"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="0"
+                  y2="4"
+                />
+                <line
+                  x1="13"
+                  x2="13"
+                  y1="0"
+                  y2="4"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h3
+        class="PictureDetails__descriptionTitle"
+      >
+        Description
+      </h3>
+      <p
+        class="PictureDetails__description"
+        data-testid="description"
+      >
+        Yesterday, early morning risers around planet Earth were treated to a waning Moon low in the east as the sky grew bright before dawn. From the Island of Ortigia, Syracuse, Sicily, Italy this simple snapshot found the slender sunlit crescent just before sunrise. Never wandering far from the Sun in Earth's sky, inner planets Venus and Mercury shared the calm seaside view. Also in the frame, right of the line-up of Luna and planets, is bright star Spica, alpha star of the constellation Virgo and one of the 20 brightest stars in Earth's night. Tomorrow the Moon will be New. The dark lunar disk means mostly dark nights for planet Earth in the coming week and a good chance to watch the annual Leonid Meteor Shower.
+      </p>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
