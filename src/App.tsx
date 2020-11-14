@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 import PictureDisplay from './components/PictureDisplay/PictureDisplay';
-import { DetailsState } from './utils';
 import moment from "moment";
+import { DetailsState, getPhotoDetailsFromLocalStorage, persistToLocalStorage } from './utils';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -16,14 +16,25 @@ function App() {
       const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=${moment(dateValue).format("YYYY-MM-D")}`;
       try {
         const response = await (await fetch(endpoint)).json();
+        persistToLocalStorage(response, dateValue);
         setDetails(response);
       } catch (error) {
         console.log('error', error)
       }
     }
 
-    setLoading(false);
-    getDetails();
+    if (localStorage.getItem('photo_details')) {
+      const details = getPhotoDetailsFromLocalStorage(dateValue);
+      if (details !== undefined) {
+        setDetails(details);
+      } else {
+        getDetails();
+        setLoading(false);
+      }
+    } else {
+      getDetails();
+      setLoading(false);
+    }
   }, [dateValue]);
 
   const dateChange = (value?: any) => setDateValue(new Date(value));
