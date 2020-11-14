@@ -5,10 +5,10 @@ import DatePicker from 'react-date-picker';
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
 
 const PictureDisplay: React.FC<PictureDetailsProps> = ({
-  id,
+  hdurl,
   url,
   title,
-  description,
+  explanation,
   nextPicture,
   prevPicture,
   onDateChange,
@@ -45,13 +45,16 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
       </div>
 
       <div data-testid="dateContainer" className={styles.PictureDetails__dateContainer}>
+        <button>
+          set favorite
+        </button>
         <DatePicker
           onChange={onDateChange}
           value={dateValue}
         />
       </div>
       <p data-testid="description" className={styles.PictureDetails__description} >
-        {description}
+        {explanation}
       </p>
     </div>
   )

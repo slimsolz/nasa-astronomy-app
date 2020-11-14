@@ -1,9 +1,12 @@
 export type DetailsState = {
   url?: string;
-  id?: string;
+  hdurl?: string;
+  copyright?: string;
   title?: string;
-  description?: string;
+  explanation?: string;
   date?: Date;
+  media_type?: string;
+  service_version?: string
 }
 
 export type PictureDetailsProps = DetailsState & {
@@ -12,4 +15,3 @@ export type PictureDetailsProps = DetailsState & {
   onDateChange: (value?: any) => void;
   dateValue: Date;
 };
-
