@@ -12,7 +12,9 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
   nextPicture,
   prevPicture,
   onDateChange,
-  dateValue
+  dateValue,
+  onFavClicked,
+  fav,
 }) => {
   return (
     <div data-testid="main" className={styles.PictureDetails}>
@@ -45,14 +47,18 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
       </div>
 
       <div data-testid="dateContainer" className={styles.PictureDetails__dateContainer}>
-        <button>
-          set favorite
+        <button
+          className={`${styles.PictureDetails__favBtn} ${fav && styles.PictureDetails__fav}`}
+          onClick={onFavClicked}
+        >
+          {fav ? 'remove favorite' : 'set favorite'}
         </button>
         <DatePicker
           onChange={onDateChange}
           value={dateValue}
         />
       </div>
+      <h3 className={styles.PictureDetails__descriptionTitle}>Description</h3>
       <p data-testid="description" className={styles.PictureDetails__description} >
         {explanation}
       </p>

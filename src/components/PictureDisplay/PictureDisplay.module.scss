@@ -35,9 +35,23 @@
 
 .PictureDetails__dateContainer {
   width: 90%;
-  margin: 5px auto;
+  margin: 15px auto 5px auto;
   display: flex;
   justify-content: space-between;
+}
+
+.PictureDetails__favBtn {
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.PictureDetails__fav {
+  background-color: red;
+  color: white;
+}
+
+.PictureDetails__descriptionTitle {
+  margin: 15px;
 }
 
 .PictureDetails__description {
@@ -73,6 +87,6 @@
   }
 
   .PictureDetails__dateContainer {
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }

@@ -9,13 +9,16 @@ export type DetailsState = {
   date?: string;
   media_type?: string;
   service_version?: string
+  fav?: boolean
 }
 
 export type PictureDetailsProps = DetailsState & {
   nextPicture: (e: React.MouseEvent<HTMLButtonElement>) => void;
   prevPicture: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onDateChange: (value?: any) => void;
+  onFavClicked: (e: React.MouseEvent<HTMLButtonElement>) => void;
   dateValue: Date;
+  fav: boolean;
 };
 
 export const persistToLocalStorage = (details: DetailsState, date?: Date): void => {
@@ -38,4 +41,12 @@ export const getPhotoDetailsFromLocalStorage = (date?: Date): DetailsState => {
     return details;
   }
     return {};
+}
+
+export const onFavorite = (details: DetailsState, favChoice: boolean): void => {
+  const newDetailsToBeStored = { ...details, fav: favChoice }
+  const photos = JSON.parse(localStorage.getItem('photo_details')!);
+  const otherPhotos = photos.filter((photo: DetailsState) => photo.url !== details.url && photo.copyright !== details.copyright)
+  otherPhotos.push(newDetailsToBeStored)
+  localStorage.setItem("photo_details", JSON.stringify(otherPhotos));
 }
