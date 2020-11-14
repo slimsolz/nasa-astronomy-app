@@ -36,7 +36,6 @@ export const getPhotoDetailsFromLocalStorage = (date?: Date): DetailsState => {
         return detail.date === dateFormatted
       })
     return details;
-  } else {
-    return {};
   }
+    return {};
 }
