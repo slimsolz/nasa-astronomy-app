@@ -39,6 +39,15 @@ function App() {
 
   const dateChange = (value?: any) => setDateValue(new Date(value));
 
+  const onNextClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
+    let new_date = moment(dateValue).add('days', 1).format("YYYY-MM-D");
+    setDateValue(new Date(new_date))
+  }
+  const onPrevClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
+    let new_date = moment(dateValue).subtract('days', 1).format("YYYY-MM-D");
+    setDateValue(new Date(new_date))
+  }
+
   return (
     <div className={styles.App}>
       <h1 className={styles.App__heading}>nasa's picture of the day</h1>
@@ -48,8 +57,8 @@ function App() {
           url={details.url}
           title={details.title}
           explanation={details.explanation}
-          nextPicture={() => { }}
-          prevPicture={() => { }}
+          nextPicture={onNextClicked}
+          prevPicture={onPrevClicked}
           onDateChange={dateChange}
           dateValue={dateValue}
         />
