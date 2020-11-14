@@ -15,10 +15,11 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
   dateValue,
   onFavClicked,
   fav,
+  error
 }) => {
   return (
     <div data-testid="main" className={styles.PictureDetails}>
-      <h2 data-testid="title" className={styles.PictureDetails__title}>{title}</h2>
+      <h2 data-testid="title" className={styles.PictureDetails__title}>{!error && title}</h2>
       <div className={styles.PictureDetails__imageContainer}>
         <button
           onClick={prevPicture}
@@ -27,7 +28,7 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
         >
           <FaChevronCircleLeft color="#b81c1c" />
         </button>
-        <img src={url} className={styles.PictureDetails__img} alt={title} />
+        {error ? <p>{error}</p> : <img src={url} className={styles.PictureDetails__img} alt={title} />}
         <button
           className={`${styles.PictureDetails__ArrowBtn} ${styles.PictureDetails__ArrowRightBtn}`}
           onClick={nextPicture}
@@ -50,6 +51,7 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
         <button
           className={`${styles.PictureDetails__favBtn} ${fav && styles.PictureDetails__fav}`}
           onClick={onFavClicked}
+          disabled={error ? true : false}
         >
           {fav ? 'remove favorite' : 'set favorite'}
         </button>
@@ -58,10 +60,14 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
           value={dateValue}
         />
       </div>
-      <h3 className={styles.PictureDetails__descriptionTitle}>Description</h3>
-      <p data-testid="description" className={styles.PictureDetails__description} >
-        {explanation}
-      </p>
+      {!error &&
+        <>
+          <h3 className={styles.PictureDetails__descriptionTitle}>Description</h3>
+          <p data-testid="description" className={styles.PictureDetails__description} >
+            {explanation}
+          </p>
+        </>
+      }
     </div>
   )
 }

@@ -12,6 +12,10 @@ export type DetailsState = {
   fav?: boolean
 }
 
+type ErrorObject = {
+  message?: string;
+}
+
 export type PictureDetailsProps = DetailsState & {
   nextPicture: (e: React.MouseEvent<HTMLButtonElement>) => void;
   prevPicture: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -19,6 +23,7 @@ export type PictureDetailsProps = DetailsState & {
   onFavClicked: (e: React.MouseEvent<HTMLButtonElement>) => void;
   dateValue: Date;
   fav: boolean;
+  error: string;
 };
 
 export const persistToLocalStorage = (details: DetailsState, date?: Date): void => {
@@ -49,4 +54,11 @@ export const onFavorite = (details: DetailsState, favChoice: boolean): void => {
   const otherPhotos = photos.filter((photo: DetailsState) => photo.url !== details.url && photo.copyright !== details.copyright)
   otherPhotos.push(newDetailsToBeStored)
   localStorage.setItem("photo_details", JSON.stringify(otherPhotos));
+}
+
+export const getErrorMessage = (type: ErrorObject): string => {
+  if (type.message === "Failed to fetch") {
+    return "connection lost, please try again"
+  }
+  return 'something went wrong';
 }
