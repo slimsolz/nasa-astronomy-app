@@ -18,7 +18,8 @@ const picDetails = {
   onDateChange: () => {},
   dateValue: new Date(),
   onFavClicked: () => {},
-  fav: false
+  fav: false,
+  error: ""
 }
 
 beforeEach(() => {
@@ -32,6 +33,7 @@ beforeEach(() => {
     onDateChange={picDetails.onDateChange}
     dateValue={picDetails.dateValue}
     onFavClicked={picDetails.onFavClicked}
+    error={picDetails.error}
     />)
 })
 
@@ -58,6 +60,29 @@ it('should have image description displayed', () => {
   const imageDescription = screen.getByTestId('description');
   expect(imageDescription).toBeInTheDocument();
   expect(imageDescription.textContent).toEqual(picDetails.explanation);
+});
+
+it('should not display error message', () => {
+  const newProps = {
+    ...picDetails,
+    error: "something went wrong"
+  }
+  component = render(<PictureDisplay
+    copyright={newProps.copyright}
+    url={newProps.url}
+    explanation={newProps.explanation}
+    fav={newProps.fav}
+    nextPicture={newProps.nextPicture}
+    prevPicture={newProps.prevPicture}
+    onDateChange={newProps.onDateChange}
+    dateValue={newProps.dateValue}
+    onFavClicked={newProps.onFavClicked}
+    error={newProps.error}
+  />);
+
+  const errorMessage = screen.getByTestId('error-message');
+  expect(errorMessage).toBeInTheDocument();
+  expect(errorMessage.textContent).toEqual(newProps.error);
 });
 
 it('should render all buttons', () => {
