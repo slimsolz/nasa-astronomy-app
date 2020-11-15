@@ -28,7 +28,8 @@ const PictureDisplay: React.FC<PictureDetailsProps> = ({
         >
           <FaChevronCircleLeft color="#b81c1c" />
         </button>
-        {error ? <p>{error}</p> : <img src={url} className={styles.PictureDetails__img} alt={title} />}
+        {error ? <p data-testid="error-message">{error}</p>
+          : <img src={url} className={styles.PictureDetails__img} alt={title} />}
         <button
           className={`${styles.PictureDetails__ArrowBtn} ${styles.PictureDetails__ArrowRightBtn}`}
           onClick={nextPicture}
